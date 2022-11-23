@@ -11,6 +11,21 @@ public class program {
         int n = Integer.highestOneBit(i2);
         System.out.println("2. Старший значащий бит: " + n);
 
+        String strKrat = "";
+        for(int j = i; j < Short.MAX_VALUE; j++) {
+            if (j%n == 0) {
+                strKrat += j + " ";
+            }
+        }
+
+        String[] m1 = strKrat.split(" ");
+
+        System.out.println("3. Массив m1: ");
+        for(int k=0; k<m1.length; k++) {
+            System.out.print(m1[k] + " ");
+        }
+        System.out.println();
+
     }
     
 }
