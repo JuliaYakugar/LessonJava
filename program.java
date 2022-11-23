@@ -6,6 +6,11 @@ public class program {
         int i = new Random().nextInt((1000 - (-1000)) + 1) + (-1000);
         System.out.println("1. Рандомное число: " + i);
 
+        int i2 = i;
+        if (i2 < 0) i2 *= -1;
+        int n = Integer.highestOneBit(i2);
+        System.out.println("2. Старший значащий бит: " + n);
+
     }
     
 }
