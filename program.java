@@ -26,6 +26,19 @@ public class program {
         }
         System.out.println();
 
+        String strNeKrat = "";
+        for(int j = Short.MIN_VALUE; j < i; j++) {
+            if (j%n != 0) {
+                strNeKrat += j + " ";
+            }
+        }
+
+        String[] m2 = strNeKrat.split(" ");
+
+        System.out.println("4. Массив m2: ");
+        for(int k=0; k<m2.length; k++) {
+            System.out.print(m2[k] + " ");
+        }
     }
     
 }
