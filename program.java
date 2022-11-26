@@ -68,6 +68,15 @@ public class program {
 
         String str3 = "Привет Юля";
         System.out.println(Recurs.recurs(str3));
+
+        int a = 3;
+        int b = 56;
+
+        StringBuilder sb = new StringBuilder();
+        sb.append(a + " + " + b + " = " + (a+b) + "\n");
+        sb.append(a + " - " + b + " = " + (a-b) + "\n");
+        sb.append(a + " * " + b + " = " + (a*b));
+        System.out.println(sb);
     }
     
 }
