@@ -84,6 +84,12 @@ public class program {
         str5Sb.deleteCharAt(indexRavno);
         str5Sb.insert(indexRavno, "равно");
         System.out.println(str5Sb);
+
+        String str6 = "Строка, в которой есть = и еще много других символов";
+        StringBuilder str6Sb = new StringBuilder(str6);
+        int indexRavno6 = str6Sb.indexOf("=");
+        str6Sb.replace(indexRavno6, indexRavno6+1, "равно");
+        System.out.println(str6Sb);
     }
     
 }
