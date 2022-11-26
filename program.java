@@ -56,6 +56,18 @@ public class program {
                 System.out.println("Является переворотом");
             }
         }
+
+        class Recurs {
+            public static String recurs(String str) {
+                if (str.length() <= 1) {
+                    return str;
+                }
+                return recurs(str.substring(1)) + str.charAt(0);
+            }
+        }
+
+        String str3 = "Привет Юля";
+        System.out.println(Recurs.recurs(str3));
     }
     
 }
