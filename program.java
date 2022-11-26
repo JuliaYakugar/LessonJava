@@ -90,6 +90,31 @@ public class program {
         int indexRavno6 = str6Sb.indexOf("=");
         str6Sb.replace(indexRavno6, indexRavno6+1, "равно");
         System.out.println(str6Sb);
+
+        String str7 = "";
+        for (int i = 0; i<10000; i++) {
+            if (i%10 == 0) {
+                str7 += "=";
+            } else {
+                str7 += new Random().nextInt(10);
+            }
+        }
+        StringBuilder str7Sb = new StringBuilder(str7);
+
+        long start = System.currentTimeMillis();
+        while (str7.contains("=")) {
+            str7 = str7.replace("=", "равно");
+        }
+        System.out.println("String: " + (System.currentTimeMillis() - start));
+        
+        long start2 = System.currentTimeMillis();
+        while ((str7Sb.indexOf("=")) != -1) {
+            int indexRavno7 = str7Sb.indexOf("=");
+            str7Sb.replace(indexRavno7, indexRavno7+1, "равно");
+        }
+        System.out.println("StringBuilder: " + (System.currentTimeMillis() - start2));
+        
+        
     }
     
 }
