@@ -77,6 +77,13 @@ public class program {
         sb.append(a + " - " + b + " = " + (a-b) + "\n");
         sb.append(a + " * " + b + " = " + (a*b));
         System.out.println(sb);
+
+        String str5 = "Строка, в которой есть = и еще много других символов";
+        StringBuilder str5Sb = new StringBuilder(str5);
+        int indexRavno = str5Sb.indexOf("=");
+        str5Sb.deleteCharAt(indexRavno);
+        str5Sb.insert(indexRavno, "равно");
+        System.out.println(str5Sb);
     }
     
 }
