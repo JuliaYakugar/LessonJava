@@ -39,6 +39,11 @@ public class program {
         // for(int k=0; k<m2.length; k++) {
         //     System.out.print(m2[k] + " ");
         // }
+
+        String str = "Тут текст, а текст этот про текст с текстом.";
+        String strMini = "текст";
+        int indexMini = str.indexOf(strMini);
+        System.out.println("Наименьший индекс вхождения: " + indexMini);
     }
     
 }
