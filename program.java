@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Random;
 
 public class program {
@@ -44,6 +45,17 @@ public class program {
         String strMini = "текст";
         int indexMini = str.indexOf(strMini);
         System.out.println("Наименьший индекс вхождения: " + indexMini);
+
+        String str1 = "Привет Юля";
+        String str2 = "ялЮ тевирП";
+        for (int i = 0; i < str1.length(); i++) {
+            if ((str1.charAt(i)) != (str2.charAt(str1.length()-i-1))) {
+                System.out.println("Не является переворотом");
+                break;
+            } else if (i == (str1.length()-1)) {
+                System.out.println("Является переворотом");
+            }
+        }
     }
     
 }
