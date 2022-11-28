@@ -1,3 +1,4 @@
+import java.util.*;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -115,6 +116,82 @@ public class program {
         // System.out.println("StringBuilder: " + (System.currentTimeMillis() - start2));
         
         
+        // 1. Создать новый список, добавить несколько строк и вывести коллекцию на экран
+        ArrayList<String> str = new ArrayList<String>();
+        str.add("Синий");
+        str.add("Красный");
+        str.add("Черный");
+        str.add("Белый");
+        str.add("Зеленый");
+
+        printStr(str);
+
+        // 2. Итерация всех элементов списка цветов и добавления к каждому символа '!'
+        for (int i=0; i < str.size(); i++) {
+            str.set(i, str.get(i) + "!");
+        }
+
+        printStr(str);
+
+        // 3. Вставить элемент в список в первой позиции
+        str.add(1, "Серый");
+
+        printStr(str);
+
+        // 4. Извлечь элемент (по указанному индексу) из заданного списка
+        System.out.print(str.get(3));
+
+        System.out.println();
+
+        // 5. Обновить определенный элемент списка по заданному индексу
+        str.set(2, "Фиолетовый");
+
+        printStr(str);
+
+        // 6. Удалить третий элемент из списка
+        str.remove(3);
+
+        printStr(str);
+
+        // 7. Поиска элемента в списке по строке
+        System.out.print(str.indexOf("Белый!"));
+        System.out.println();
+
+        // 8. Создать новый список и добавить в него несколько елементов первого списка
+        ArrayList<String> strNew = new ArrayList<String>();
+        strNew.add(str.get(0));
+        strNew.add(str.get(4));
+
+        printStr(strNew);
+
+        // 9. Удалить из первого списка все элементы отсутствующие во втором списке
+        str.retainAll(strNew);
+
+        printStr(str);
+
+        // 10. *Сортировка списка
+        Collections.sort(str);
+
+        printStr(str);
+
+        //11. *Сравнить время работы пункта 3 для ArrayList и LinkedList
+        List<String> linkedList = new LinkedList<String>(str);
+
+        long start = System.currentTimeMillis();
+        str.add(1, "Голубой");
+        System.out.println(System.currentTimeMillis() - start);
+
+        start = System.currentTimeMillis();
+        linkedList.add(1, "Голубой");
+        System.out.println(System.currentTimeMillis() - start);
+    }
+
+    public static void printStr(ArrayList str) {
+        for (Object o: str) {
+            System.out.print(o + " ");
+        }
+
+        System.out.println();
     }
     
 }
