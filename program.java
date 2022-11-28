@@ -41,78 +41,78 @@ public class program {
         //     System.out.print(m2[k] + " ");
         // }
 
-        String str = "Тут текст, а текст этот про текст с текстом.";
-        String strMini = "текст";
-        int indexMini = str.indexOf(strMini);
-        System.out.println("Наименьший индекс вхождения: " + indexMini);
+        // String str = "Тут текст, а текст этот про текст с текстом.";
+        // String strMini = "текст";
+        // int indexMini = str.indexOf(strMini);
+        // System.out.println("Наименьший индекс вхождения: " + indexMini);
 
-        String str1 = "Привет Юля";
-        String str2 = "ялЮ тевирП";
-        for (int i = 0; i < str1.length(); i++) {
-            if ((str1.charAt(i)) != (str2.charAt(str1.length()-i-1))) {
-                System.out.println("Не является переворотом");
-                break;
-            } else if (i == (str1.length()-1)) {
-                System.out.println("Является переворотом");
-            }
-        }
+        // String str1 = "Привет Юля";
+        // String str2 = "ялЮ тевирП";
+        // for (int i = 0; i < str1.length(); i++) {
+        //     if ((str1.charAt(i)) != (str2.charAt(str1.length()-i-1))) {
+        //         System.out.println("Не является переворотом");
+        //         break;
+        //     } else if (i == (str1.length()-1)) {
+        //         System.out.println("Является переворотом");
+        //     }
+        // }
 
-        class Recurs {
-            public static String recurs(String str) {
-                if (str.length() <= 1) {
-                    return str;
-                }
-                return recurs(str.substring(1)) + str.charAt(0);
-            }
-        }
+        // class Recurs {
+        //     public static String recurs(String str) {
+        //         if (str.length() <= 1) {
+        //             return str;
+        //         }
+        //         return recurs(str.substring(1)) + str.charAt(0);
+        //     }
+        // }
 
-        String str3 = "Привет Юля";
-        System.out.println(Recurs.recurs(str3));
+        // String str3 = "Привет Юля";
+        // System.out.println(Recurs.recurs(str3));
 
-        int a = 3;
-        int b = 56;
+        // int a = 3;
+        // int b = 56;
 
-        StringBuilder sb = new StringBuilder();
-        sb.append(a + " + " + b + " = " + (a+b) + "\n");
-        sb.append(a + " - " + b + " = " + (a-b) + "\n");
-        sb.append(a + " * " + b + " = " + (a*b));
-        System.out.println(sb);
+        // StringBuilder sb = new StringBuilder();
+        // sb.append(a + " + " + b + " = " + (a+b) + "\n");
+        // sb.append(a + " - " + b + " = " + (a-b) + "\n");
+        // sb.append(a + " * " + b + " = " + (a*b));
+        // System.out.println(sb);
 
-        String str5 = "Строка, в которой есть = и еще много других символов";
-        StringBuilder str5Sb = new StringBuilder(str5);
-        int indexRavno = str5Sb.indexOf("=");
-        str5Sb.deleteCharAt(indexRavno);
-        str5Sb.insert(indexRavno, "равно");
-        System.out.println(str5Sb);
+        // String str5 = "Строка, в которой есть = и еще много других символов";
+        // StringBuilder str5Sb = new StringBuilder(str5);
+        // int indexRavno = str5Sb.indexOf("=");
+        // str5Sb.deleteCharAt(indexRavno);
+        // str5Sb.insert(indexRavno, "равно");
+        // System.out.println(str5Sb);
 
-        String str6 = "Строка, в которой есть = и еще много других символов";
-        StringBuilder str6Sb = new StringBuilder(str6);
-        int indexRavno6 = str6Sb.indexOf("=");
-        str6Sb.replace(indexRavno6, indexRavno6+1, "равно");
-        System.out.println(str6Sb);
+        // String str6 = "Строка, в которой есть = и еще много других символов";
+        // StringBuilder str6Sb = new StringBuilder(str6);
+        // int indexRavno6 = str6Sb.indexOf("=");
+        // str6Sb.replace(indexRavno6, indexRavno6+1, "равно");
+        // System.out.println(str6Sb);
 
-        String str7 = "";
-        for (int i = 0; i<10000; i++) {
-            if (i%10 == 0) {
-                str7 += "=";
-            } else {
-                str7 += new Random().nextInt(10);
-            }
-        }
-        StringBuilder str7Sb = new StringBuilder(str7);
+        // String str7 = "";
+        // for (int i = 0; i<10000; i++) {
+        //     if (i%10 == 0) {
+        //         str7 += "=";
+        //     } else {
+        //         str7 += new Random().nextInt(10);
+        //     }
+        // }
+        // StringBuilder str7Sb = new StringBuilder(str7);
 
-        long start = System.currentTimeMillis();
-        while (str7.contains("=")) {
-            str7 = str7.replace("=", "равно");
-        }
-        System.out.println("String: " + (System.currentTimeMillis() - start));
+        // long start = System.currentTimeMillis();
+        // while (str7.contains("=")) {
+        //     str7 = str7.replace("=", "равно");
+        // }
+        // System.out.println("String: " + (System.currentTimeMillis() - start));
         
-        long start2 = System.currentTimeMillis();
-        while ((str7Sb.indexOf("=")) != -1) {
-            int indexRavno7 = str7Sb.indexOf("=");
-            str7Sb.replace(indexRavno7, indexRavno7+1, "равно");
-        }
-        System.out.println("StringBuilder: " + (System.currentTimeMillis() - start2));
+        // long start2 = System.currentTimeMillis();
+        // while ((str7Sb.indexOf("=")) != -1) {
+        //     int indexRavno7 = str7Sb.indexOf("=");
+        //     str7Sb.replace(indexRavno7, indexRavno7+1, "равно");
+        // }
+        // System.out.println("StringBuilder: " + (System.currentTimeMillis() - start2));
         
         
     }
