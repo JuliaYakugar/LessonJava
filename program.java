@@ -1,3 +1,4 @@
+import java.util.*;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -41,80 +42,156 @@ public class program {
         //     System.out.print(m2[k] + " ");
         // }
 
-        String str = "Тут текст, а текст этот про текст с текстом.";
-        String strMini = "текст";
-        int indexMini = str.indexOf(strMini);
-        System.out.println("Наименьший индекс вхождения: " + indexMini);
+        // String str = "Тут текст, а текст этот про текст с текстом.";
+        // String strMini = "текст";
+        // int indexMini = str.indexOf(strMini);
+        // System.out.println("Наименьший индекс вхождения: " + indexMini);
 
-        String str1 = "Привет Юля";
-        String str2 = "ялЮ тевирП";
-        for (int i = 0; i < str1.length(); i++) {
-            if ((str1.charAt(i)) != (str2.charAt(str1.length()-i-1))) {
-                System.out.println("Не является переворотом");
-                break;
-            } else if (i == (str1.length()-1)) {
-                System.out.println("Является переворотом");
-            }
+        // String str1 = "Привет Юля";
+        // String str2 = "ялЮ тевирП";
+        // for (int i = 0; i < str1.length(); i++) {
+        //     if ((str1.charAt(i)) != (str2.charAt(str1.length()-i-1))) {
+        //         System.out.println("Не является переворотом");
+        //         break;
+        //     } else if (i == (str1.length()-1)) {
+        //         System.out.println("Является переворотом");
+        //     }
+        // }
+
+        // class Recurs {
+        //     public static String recurs(String str) {
+        //         if (str.length() <= 1) {
+        //             return str;
+        //         }
+        //         return recurs(str.substring(1)) + str.charAt(0);
+        //     }
+        // }
+
+        // String str3 = "Привет Юля";
+        // System.out.println(Recurs.recurs(str3));
+
+        // int a = 3;
+        // int b = 56;
+
+        // StringBuilder sb = new StringBuilder();
+        // sb.append(a + " + " + b + " = " + (a+b) + "\n");
+        // sb.append(a + " - " + b + " = " + (a-b) + "\n");
+        // sb.append(a + " * " + b + " = " + (a*b));
+        // System.out.println(sb);
+
+        // String str5 = "Строка, в которой есть = и еще много других символов";
+        // StringBuilder str5Sb = new StringBuilder(str5);
+        // int indexRavno = str5Sb.indexOf("=");
+        // str5Sb.deleteCharAt(indexRavno);
+        // str5Sb.insert(indexRavno, "равно");
+        // System.out.println(str5Sb);
+
+        // String str6 = "Строка, в которой есть = и еще много других символов";
+        // StringBuilder str6Sb = new StringBuilder(str6);
+        // int indexRavno6 = str6Sb.indexOf("=");
+        // str6Sb.replace(indexRavno6, indexRavno6+1, "равно");
+        // System.out.println(str6Sb);
+
+        // String str7 = "";
+        // for (int i = 0; i<10000; i++) {
+        //     if (i%10 == 0) {
+        //         str7 += "=";
+        //     } else {
+        //         str7 += new Random().nextInt(10);
+        //     }
+        // }
+        // StringBuilder str7Sb = new StringBuilder(str7);
+
+        // long start = System.currentTimeMillis();
+        // while (str7.contains("=")) {
+        //     str7 = str7.replace("=", "равно");
+        // }
+        // System.out.println("String: " + (System.currentTimeMillis() - start));
+        
+        // long start2 = System.currentTimeMillis();
+        // while ((str7Sb.indexOf("=")) != -1) {
+        //     int indexRavno7 = str7Sb.indexOf("=");
+        //     str7Sb.replace(indexRavno7, indexRavno7+1, "равно");
+        // }
+        // System.out.println("StringBuilder: " + (System.currentTimeMillis() - start2));
+        
+        
+        // 1. Создать новый список, добавить несколько строк и вывести коллекцию на экран
+        ArrayList<String> str = new ArrayList<String>();
+        str.add("Синий");
+        str.add("Красный");
+        str.add("Черный");
+        str.add("Белый");
+        str.add("Зеленый");
+
+        printStr(str);
+
+        // 2. Итерация всех элементов списка цветов и добавления к каждому символа '!'
+        for (int i=0; i < str.size(); i++) {
+            str.set(i, str.get(i) + "!");
         }
 
-        class Recurs {
-            public static String recurs(String str) {
-                if (str.length() <= 1) {
-                    return str;
-                }
-                return recurs(str.substring(1)) + str.charAt(0);
-            }
-        }
+        printStr(str);
 
-        String str3 = "Привет Юля";
-        System.out.println(Recurs.recurs(str3));
+        // 3. Вставить элемент в список в первой позиции
+        str.add(1, "Серый");
 
-        int a = 3;
-        int b = 56;
+        printStr(str);
 
-        StringBuilder sb = new StringBuilder();
-        sb.append(a + " + " + b + " = " + (a+b) + "\n");
-        sb.append(a + " - " + b + " = " + (a-b) + "\n");
-        sb.append(a + " * " + b + " = " + (a*b));
-        System.out.println(sb);
+        // 4. Извлечь элемент (по указанному индексу) из заданного списка
+        System.out.print(str.get(3));
 
-        String str5 = "Строка, в которой есть = и еще много других символов";
-        StringBuilder str5Sb = new StringBuilder(str5);
-        int indexRavno = str5Sb.indexOf("=");
-        str5Sb.deleteCharAt(indexRavno);
-        str5Sb.insert(indexRavno, "равно");
-        System.out.println(str5Sb);
+        System.out.println();
 
-        String str6 = "Строка, в которой есть = и еще много других символов";
-        StringBuilder str6Sb = new StringBuilder(str6);
-        int indexRavno6 = str6Sb.indexOf("=");
-        str6Sb.replace(indexRavno6, indexRavno6+1, "равно");
-        System.out.println(str6Sb);
+        // 5. Обновить определенный элемент списка по заданному индексу
+        str.set(2, "Фиолетовый");
 
-        String str7 = "";
-        for (int i = 0; i<10000; i++) {
-            if (i%10 == 0) {
-                str7 += "=";
-            } else {
-                str7 += new Random().nextInt(10);
-            }
-        }
-        StringBuilder str7Sb = new StringBuilder(str7);
+        printStr(str);
+
+        // 6. Удалить третий элемент из списка
+        str.remove(3);
+
+        printStr(str);
+
+        // 7. Поиска элемента в списке по строке
+        System.out.print(str.indexOf("Белый!"));
+        System.out.println();
+
+        // 8. Создать новый список и добавить в него несколько елементов первого списка
+        ArrayList<String> strNew = new ArrayList<String>();
+        strNew.add(str.get(0));
+        strNew.add(str.get(4));
+
+        printStr(strNew);
+
+        // 9. Удалить из первого списка все элементы отсутствующие во втором списке
+        str.retainAll(strNew);
+
+        printStr(str);
+
+        // 10. *Сортировка списка
+        Collections.sort(str);
+
+        printStr(str);
+
+        //11. *Сравнить время работы пункта 3 для ArrayList и LinkedList
+        List<String> linkedList = new LinkedList<String>(str);
 
         long start = System.currentTimeMillis();
-        while (str7.contains("=")) {
-            str7 = str7.replace("=", "равно");
+        str.add(1, "Голубой");
+        System.out.println(System.currentTimeMillis() - start);
+
+        start = System.currentTimeMillis();
+        linkedList.add(1, "Голубой");
+        System.out.println(System.currentTimeMillis() - start);
+    }
+
+    public static void printStr(ArrayList str) {
+        for (Object o: str) {
+            System.out.print(o + " ");
         }
-        System.out.println("String: " + (System.currentTimeMillis() - start));
-        
-        long start2 = System.currentTimeMillis();
-        while ((str7Sb.indexOf("=")) != -1) {
-            int indexRavno7 = str7Sb.indexOf("=");
-            str7Sb.replace(indexRavno7, indexRavno7+1, "равно");
-        }
-        System.out.println("StringBuilder: " + (System.currentTimeMillis() - start2));
-        
-        
+
+        System.out.println();
     }
     
 }
