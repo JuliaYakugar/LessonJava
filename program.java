@@ -116,82 +116,181 @@ public class program {
         // System.out.println("StringBuilder: " + (System.currentTimeMillis() - start2));
         
         
-        // 1. Создать новый список, добавить несколько строк и вывести коллекцию на экран
-        ArrayList<String> str = new ArrayList<String>();
-        str.add("Синий");
-        str.add("Красный");
-        str.add("Черный");
-        str.add("Белый");
-        str.add("Зеленый");
+        // // 1. Создать новый список, добавить несколько строк и вывести коллекцию на экран
+        // ArrayList<String> str = new ArrayList<String>();
+        // str.add("Синий");
+        // str.add("Красный");
+        // str.add("Черный");
+        // str.add("Белый");
+        // str.add("Зеленый");
 
-        printStr(str);
+        // printStr(str);
 
-        // 2. Итерация всех элементов списка цветов и добавления к каждому символа '!'
-        for (int i=0; i < str.size(); i++) {
-            str.set(i, str.get(i) + "!");
+        // // 2. Итерация всех элементов списка цветов и добавления к каждому символа '!'
+        // for (int i=0; i < str.size(); i++) {
+        //     str.set(i, str.get(i) + "!");
+        // }
+
+        // printStr(str);
+
+        // // 3. Вставить элемент в список в первой позиции
+        // str.add(1, "Серый");
+
+        // printStr(str);
+
+        // // 4. Извлечь элемент (по указанному индексу) из заданного списка
+        // System.out.print(str.get(3));
+
+        // System.out.println();
+
+        // // 5. Обновить определенный элемент списка по заданному индексу
+        // str.set(2, "Фиолетовый");
+
+        // printStr(str);
+
+        // // 6. Удалить третий элемент из списка
+        // str.remove(3);
+
+        // printStr(str);
+
+        // // 7. Поиска элемента в списке по строке
+        // System.out.print(str.indexOf("Белый!"));
+        // System.out.println();
+
+        // // 8. Создать новый список и добавить в него несколько елементов первого списка
+        // ArrayList<String> strNew = new ArrayList<String>();
+        // strNew.add(str.get(0));
+        // strNew.add(str.get(4));
+
+        // printStr(strNew);
+
+        // // 9. Удалить из первого списка все элементы отсутствующие во втором списке
+        // str.retainAll(strNew);
+
+        // printStr(str);
+
+        // // 10. *Сортировка списка
+        // Collections.sort(str);
+
+        // printStr(str);
+
+        // //11. *Сравнить время работы пункта 3 для ArrayList и LinkedList
+        // List<String> linkedList = new LinkedList<String>(str);
+
+        // long start = System.currentTimeMillis();
+        // str.add(1, "Голубой");
+        // System.out.println(System.currentTimeMillis() - start);
+
+        // start = System.currentTimeMillis();
+        // linkedList.add(1, "Голубой");
+        // System.out.println(System.currentTimeMillis() - start);
+
+        ArrayList<String> list_fname = new ArrayList<>();
+        ArrayList<String> list_lname = new ArrayList<>();
+        ArrayList<String> list_tname = new ArrayList<>();
+        ArrayList<Integer> list_age = new ArrayList<>();
+        ArrayList<Boolean> list_gender = new ArrayList<>();
+        ArrayList<Integer> list_id = new ArrayList<>();
+        
+        boolean flag = true;
+        while (flag) {
+            Scanner scanner = new Scanner(System.in);
+            Scanner scanner_age = new Scanner(System.in);
+            Scanner scanner_gender = new Scanner(System.in);
+
+            System.out.println("Введите ФИО: ");
+            String fio = scanner.nextLine();
+            String[] fio1 = fio.split(" ");
+            if (fio1.length == 3) {
+                list_fname.add(fio1[1]);
+                list_lname.add(fio1[0]);
+                list_tname.add(fio1[2]);
+            } else if (fio1.length == 2) {
+                list_fname.add(fio1[0]);
+                list_lname.add(fio1[1]);
+                list_tname.add("");
+            } else {
+                list_fname.add(fio1[0]);
+                list_lname.add("");
+                list_tname.add("");
+            }
+
+            System.out.println("Введите возраст: ");
+            Integer age = scanner_age.nextInt();
+            list_age.add(age);
+
+            System.out.println("Введите пол M/F: ");
+            String gender = scanner_gender.nextLine();
+            if (gender.toUpperCase().equals("M")) {
+                list_gender.add(false);
+            } else if (gender.toUpperCase().equals("F")) {
+                list_gender.add(true);
+            }
+            
+            if (list_id.size() == 0) {
+                list_id.add(0);
+            } else {
+                Integer index = list_id.get(list_id.size()-1);
+                list_id.add(index + 1);
+            }
+
+            System.out.println("Хотите добавить еще одного человека? Y/N");
+            Scanner scanner1 = new Scanner(System.in);
+            String yn = scanner1.nextLine();
+            if(yn.toUpperCase().equals("N")) {
+                flag = false;
+            }
         }
 
-        printStr(str);
+        int sizeBd = list_id.size() - 1;
+        while (sizeBd >= 0) {
+            Boolean fmale = list_gender.get(list_id.get(sizeBd));
+            int index = sizeBd;
+            for (int i = 0; i < sizeBd; i++) {
+                if (list_gender.get(list_id.get(sizeBd)) == true) {
+                    fmale = list_gender.get(list_id.get(i));
+                    index = i;
+                }
+            }
+            int tmp_id = list_id.get(sizeBd);
+            list_id.set(sizeBd, list_id.get(index));
+            list_id.set(index, tmp_id);
 
-        // 3. Вставить элемент в список в первой позиции
-        str.add(1, "Серый");
+            String tmp_fname = list_fname.get(sizeBd);
+            list_fname.set(sizeBd, list_fname.get(index));
+            list_fname.set(index, tmp_fname);
 
-        printStr(str);
+            String tmp_lname = list_lname.get(sizeBd);
+            list_lname.set(sizeBd, list_lname.get(index));
+            list_lname.set(index, tmp_lname);
 
-        // 4. Извлечь элемент (по указанному индексу) из заданного списка
-        System.out.print(str.get(3));
+            String tmp_tname = list_tname.get(sizeBd);
+            list_tname.set(sizeBd, list_tname.get(index));
+            list_tname.set(index, tmp_tname);
 
-        System.out.println();
+            int tmp_age = list_age.get(sizeBd);
+            list_age.set(sizeBd, list_age.get(index));
+            list_age.set(index, tmp_age);
 
-        // 5. Обновить определенный элемент списка по заданному индексу
-        str.set(2, "Фиолетовый");
+            Boolean tmp_gender = list_gender.get(sizeBd);
+            list_gender.set(sizeBd, list_gender.get(index));
+            list_gender.set(index, tmp_gender);
 
-        printStr(str);
-
-        // 6. Удалить третий элемент из списка
-        str.remove(3);
-
-        printStr(str);
-
-        // 7. Поиска элемента в списке по строке
-        System.out.print(str.indexOf("Белый!"));
-        System.out.println();
-
-        // 8. Создать новый список и добавить в него несколько елементов первого списка
-        ArrayList<String> strNew = new ArrayList<String>();
-        strNew.add(str.get(0));
-        strNew.add(str.get(4));
-
-        printStr(strNew);
-
-        // 9. Удалить из первого списка все элементы отсутствующие во втором списке
-        str.retainAll(strNew);
-
-        printStr(str);
-
-        // 10. *Сортировка списка
-        Collections.sort(str);
-
-        printStr(str);
-
-        //11. *Сравнить время работы пункта 3 для ArrayList и LinkedList
-        List<String> linkedList = new LinkedList<String>(str);
-
-        long start = System.currentTimeMillis();
-        str.add(1, "Голубой");
-        System.out.println(System.currentTimeMillis() - start);
-
-        start = System.currentTimeMillis();
-        linkedList.add(1, "Голубой");
-        System.out.println(System.currentTimeMillis() - start);
-    }
-
-    public static void printStr(ArrayList str) {
-        for (Object o: str) {
-            System.out.print(o + " ");
+            sizeBd--;
         }
 
-        System.out.println();
+        for (int i = 0; i < list_id.size(); i++) {
+            System.out.println("ID: " + list_id.get(i) + "; Имя: " + list_fname.get(i) + "; Фамилия: " + list_lname.get(i) + "; Отчество: " + list_tname.get(i) + "; Возраст: " + list_age.get(i) + "; Пол: " + list_gender.get(i));
+        }
+
     }
+
+    // public static void printStr(ArrayList str) {
+    //     for (Object o: str) {
+    //         System.out.print(o + " ");
+    //     }
+
+    //     System.out.println();
+    // }
     
 }
