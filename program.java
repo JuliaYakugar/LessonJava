@@ -185,104 +185,144 @@ public class program {
         // linkedList.add(1, "Голубой");
         // System.out.println(System.currentTimeMillis() - start);
 
-        ArrayList<String> list_fname = new ArrayList<>();
-        ArrayList<String> list_lname = new ArrayList<>();
-        ArrayList<String> list_tname = new ArrayList<>();
-        ArrayList<Integer> list_age = new ArrayList<>();
-        ArrayList<Boolean> list_gender = new ArrayList<>();
-        ArrayList<Integer> list_id = new ArrayList<>();
+        // ArrayList<String> list_fname = new ArrayList<>();
+        // ArrayList<String> list_lname = new ArrayList<>();
+        // ArrayList<String> list_tname = new ArrayList<>();
+        // ArrayList<Integer> list_age = new ArrayList<>();
+        // ArrayList<Boolean> list_gender = new ArrayList<>();
+        // ArrayList<Integer> list_id = new ArrayList<>();
         
-        boolean flag = true;
-        while (flag) {
-            Scanner scanner = new Scanner(System.in);
-            Scanner scanner_age = new Scanner(System.in);
-            Scanner scanner_gender = new Scanner(System.in);
+        // boolean flag = true;
+        // while (flag) {
+        //     Scanner scanner = new Scanner(System.in);
+        //     Scanner scanner_age = new Scanner(System.in);
+        //     Scanner scanner_gender = new Scanner(System.in);
 
-            System.out.println("Введите ФИО: ");
-            String fio = scanner.nextLine();
-            String[] fio1 = fio.split(" ");
-            if (fio1.length == 3) {
-                list_fname.add(fio1[1]);
-                list_lname.add(fio1[0]);
-                list_tname.add(fio1[2]);
-            } else if (fio1.length == 2) {
-                list_fname.add(fio1[0]);
-                list_lname.add(fio1[1]);
-                list_tname.add("");
-            } else {
-                list_fname.add(fio1[0]);
-                list_lname.add("");
-                list_tname.add("");
-            }
+        //     System.out.println("Введите ФИО: ");
+        //     String fio = scanner.nextLine();
+        //     String[] fio1 = fio.split(" ");
+        //     if (fio1.length == 3) {
+        //         list_fname.add(fio1[1]);
+        //         list_lname.add(fio1[0]);
+        //         list_tname.add(fio1[2]);
+        //     } else if (fio1.length == 2) {
+        //         list_fname.add(fio1[0]);
+        //         list_lname.add(fio1[1]);
+        //         list_tname.add("");
+        //     } else {
+        //         list_fname.add(fio1[0]);
+        //         list_lname.add("");
+        //         list_tname.add("");
+        //     }
 
-            System.out.println("Введите возраст: ");
-            Integer age = scanner_age.nextInt();
-            list_age.add(age);
+        //     System.out.println("Введите возраст: ");
+        //     Integer age = scanner_age.nextInt();
+        //     list_age.add(age);
 
-            System.out.println("Введите пол M/F: ");
-            String gender = scanner_gender.nextLine();
-            if (gender.toUpperCase().equals("M")) {
-                list_gender.add(false);
-            } else if (gender.toUpperCase().equals("F")) {
-                list_gender.add(true);
-            }
+        //     System.out.println("Введите пол M/F: ");
+        //     String gender = scanner_gender.nextLine();
+        //     if (gender.toUpperCase().equals("M")) {
+        //         list_gender.add(false);
+        //     } else if (gender.toUpperCase().equals("F")) {
+        //         list_gender.add(true);
+        //     }
             
-            if (list_id.size() == 0) {
-                list_id.add(0);
-            } else {
-                Integer index = list_id.get(list_id.size()-1);
-                list_id.add(index + 1);
-            }
+        //     if (list_id.size() == 0) {
+        //         list_id.add(0);
+        //     } else {
+        //         Integer index = list_id.get(list_id.size()-1);
+        //         list_id.add(index + 1);
+        //     }
 
-            System.out.println("Хотите добавить еще одного человека? Y/N");
-            Scanner scanner1 = new Scanner(System.in);
-            String yn = scanner1.nextLine();
-            if(yn.toUpperCase().equals("N")) {
-                flag = false;
-            }
+        //     System.out.println("Хотите добавить еще одного человека? Y/N");
+        //     Scanner scanner1 = new Scanner(System.in);
+        //     String yn = scanner1.nextLine();
+        //     if(yn.toUpperCase().equals("N")) {
+        //         flag = false;
+        //     }
+        // }
+
+        // int sizeBd = list_id.size() - 1;
+        // while (sizeBd >= 0) {
+        //     Boolean fmale = list_gender.get(list_id.get(sizeBd));
+        //     int index = sizeBd;
+        //     for (int i = 0; i < sizeBd; i++) {
+        //         if (list_gender.get(list_id.get(sizeBd)) == true) {
+        //             fmale = list_gender.get(list_id.get(i));
+        //             index = i;
+        //         }
+        //     }
+        //     int tmp_id = list_id.get(sizeBd);
+        //     list_id.set(sizeBd, list_id.get(index));
+        //     list_id.set(index, tmp_id);
+
+        //     String tmp_fname = list_fname.get(sizeBd);
+        //     list_fname.set(sizeBd, list_fname.get(index));
+        //     list_fname.set(index, tmp_fname);
+
+        //     String tmp_lname = list_lname.get(sizeBd);
+        //     list_lname.set(sizeBd, list_lname.get(index));
+        //     list_lname.set(index, tmp_lname);
+
+        //     String tmp_tname = list_tname.get(sizeBd);
+        //     list_tname.set(sizeBd, list_tname.get(index));
+        //     list_tname.set(index, tmp_tname);
+
+        //     int tmp_age = list_age.get(sizeBd);
+        //     list_age.set(sizeBd, list_age.get(index));
+        //     list_age.set(index, tmp_age);
+
+        //     Boolean tmp_gender = list_gender.get(sizeBd);
+        //     list_gender.set(sizeBd, list_gender.get(index));
+        //     list_gender.set(index, tmp_gender);
+
+        //     sizeBd--;
+        // }
+
+        // for (int i = 0; i < list_id.size(); i++) {
+        //     System.out.println("ID: " + list_id.get(i) + "; Имя: " + list_fname.get(i) + "; Фамилия: " + list_lname.get(i) + "; Отчество: " + list_tname.get(i) + "; Возраст: " + list_age.get(i) + "; Пол: " + list_gender.get(i));
+        // }
+
+        Map<Integer, String> hm = new HashMap<>();
+
+        hm.putIfAbsent(0, "красный");
+        hm.putIfAbsent(1, "синий");
+        hm.putIfAbsent(1, "зеленый");
+        hm.putIfAbsent(2, "белый");
+
+        for (var i : hm.entrySet()) {
+            hm.replace(i.getKey(), i.getValue() + "!");
         }
 
-        int sizeBd = list_id.size() - 1;
-        while (sizeBd >= 0) {
-            Boolean fmale = list_gender.get(list_id.get(sizeBd));
-            int index = sizeBd;
-            for (int i = 0; i < sizeBd; i++) {
-                if (list_gender.get(list_id.get(sizeBd)) == true) {
-                    fmale = list_gender.get(list_id.get(i));
-                    index = i;
-                }
-            }
-            int tmp_id = list_id.get(sizeBd);
-            list_id.set(sizeBd, list_id.get(index));
-            list_id.set(index, tmp_id);
-
-            String tmp_fname = list_fname.get(sizeBd);
-            list_fname.set(sizeBd, list_fname.get(index));
-            list_fname.set(index, tmp_fname);
-
-            String tmp_lname = list_lname.get(sizeBd);
-            list_lname.set(sizeBd, list_lname.get(index));
-            list_lname.set(index, tmp_lname);
-
-            String tmp_tname = list_tname.get(sizeBd);
-            list_tname.set(sizeBd, list_tname.get(index));
-            list_tname.set(index, tmp_tname);
-
-            int tmp_age = list_age.get(sizeBd);
-            list_age.set(sizeBd, list_age.get(index));
-            list_age.set(index, tmp_age);
-
-            Boolean tmp_gender = list_gender.get(sizeBd);
-            list_gender.set(sizeBd, list_gender.get(index));
-            list_gender.set(index, tmp_gender);
-
-            sizeBd--;
+        while (hm.size() <1000) {
+            hm.putIfAbsent(new Random().nextInt(1000000), "золотой");
         }
 
-        for (int i = 0; i < list_id.size(); i++) {
-            System.out.println("ID: " + list_id.get(i) + "; Имя: " + list_fname.get(i) + "; Фамилия: " + list_lname.get(i) + "; Отчество: " + list_tname.get(i) + "; Возраст: " + list_age.get(i) + "; Пол: " + list_gender.get(i));
+        long startHm = System.currentTimeMillis();
+        hm.forEach((k, v) -> System.out.println("k: " + k + " v: " + v));
+        long timeHm = System.currentTimeMillis() - startHm;
+
+        TreeMap<Integer, String> tm = new TreeMap<>();
+
+        tm.putIfAbsent(0, "красный");
+        tm.putIfAbsent(1, "синий");
+        tm.putIfAbsent(1, "зеленый");
+        tm.putIfAbsent(2, "белый");
+
+        for (var j : tm.entrySet()) {
+            tm.replace(j.getKey(), j.getValue() + "!");
         }
 
+        while (tm.size() <1000) {
+            tm.putIfAbsent(new Random().nextInt(1000000), "золотой");
+        }
+
+        long startTm = System.currentTimeMillis();
+        tm.forEach((k, v) -> System.out.println("k: " + k + " v: " + v));
+        long timeTm = System.currentTimeMillis() - startTm;
+
+        System.out.println("HashMap: " + timeHm);
+        System.out.println("TreeMap: " + timeTm);
     }
 
     // public static void printStr(ArrayList str) {
