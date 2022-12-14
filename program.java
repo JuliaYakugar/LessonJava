@@ -3,6 +3,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class program {
+    static Set<Integer> integers = new TreeSet<>();
     public static void main(String[] args) {
         
         // int i = new Random().nextInt((1000 - (-1000)) + 1) + (-1000);
@@ -324,7 +325,32 @@ public class program {
         // System.out.println("HashMap: " + timeHm);
         // System.out.println("TreeMap: " + timeTm);
 
+        int j = 0;
+        while (j < 10) {
+            addSet(newRandomInt());
+            j++;
+        }
+        integers.forEach(i-> System.out.print(i + ", "));
+        System.out.println();
+
+        ArrayList<Integer> sortSet = new ArrayList<>();
+        sortSet = ReverseSetSort();
+        sortSet.forEach(i-> System.out.print(i + ", "));
         
+    }
+
+    public static void addSet(int x) {
+        integers.add(x);
+    }
+
+    public static int newRandomInt () {
+        return new Random().nextInt(0, 1000);
+    }
+
+    public static ArrayList<Integer> ReverseSetSort() {
+        ArrayList<Integer> arraySet = new ArrayList<>(integers);
+        Collections.sort(arraySet,Collections.reverseOrder());
+        return arraySet;
     }
 
     // public static void printStr(ArrayList str) {
