@@ -3,6 +3,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class program {
+    static Set<Integer> integers = new TreeSet<>();
     public static void main(String[] args) {
         
         // int i = new Random().nextInt((1000 - (-1000)) + 1) + (-1000);
@@ -283,46 +284,73 @@ public class program {
         //     System.out.println("ID: " + list_id.get(i) + "; Имя: " + list_fname.get(i) + "; Фамилия: " + list_lname.get(i) + "; Отчество: " + list_tname.get(i) + "; Возраст: " + list_age.get(i) + "; Пол: " + list_gender.get(i));
         // }
 
-        Map<Integer, String> hm = new HashMap<>();
+        // Map<Integer, String> hm = new HashMap<>();
 
-        hm.putIfAbsent(0, "красный");
-        hm.putIfAbsent(1, "синий");
-        hm.putIfAbsent(1, "зеленый");
-        hm.putIfAbsent(2, "белый");
+        // hm.putIfAbsent(0, "красный");
+        // hm.putIfAbsent(1, "синий");
+        // hm.putIfAbsent(1, "зеленый");
+        // hm.putIfAbsent(2, "белый");
 
-        for (var i : hm.entrySet()) {
-            hm.replace(i.getKey(), i.getValue() + "!");
+        // for (var i : hm.entrySet()) {
+        //     hm.replace(i.getKey(), i.getValue() + "!");
+        // }
+
+        // while (hm.size() <1000) {
+        //     hm.putIfAbsent(new Random().nextInt(1000000), "золотой");
+        // }
+
+        // long startHm = System.currentTimeMillis();
+        // hm.forEach((k, v) -> System.out.println("k: " + k + " v: " + v));
+        // long timeHm = System.currentTimeMillis() - startHm;
+
+        // TreeMap<Integer, String> tm = new TreeMap<>();
+
+        // tm.putIfAbsent(0, "красный");
+        // tm.putIfAbsent(1, "синий");
+        // tm.putIfAbsent(1, "зеленый");
+        // tm.putIfAbsent(2, "белый");
+
+        // for (var j : tm.entrySet()) {
+        //     tm.replace(j.getKey(), j.getValue() + "!");
+        // }
+
+        // while (tm.size() <1000) {
+        //     tm.putIfAbsent(new Random().nextInt(1000000), "золотой");
+        // }
+
+        // long startTm = System.currentTimeMillis();
+        // tm.forEach((k, v) -> System.out.println("k: " + k + " v: " + v));
+        // long timeTm = System.currentTimeMillis() - startTm;
+
+        // System.out.println("HashMap: " + timeHm);
+        // System.out.println("TreeMap: " + timeTm);
+
+        int j = 0;
+        while (j < 10) {
+            addSet(newRandomInt());
+            j++;
         }
+        integers.forEach(i-> System.out.print(i + ", "));
+        System.out.println();
 
-        while (hm.size() <1000) {
-            hm.putIfAbsent(new Random().nextInt(1000000), "золотой");
-        }
+        ArrayList<Integer> sortSet = new ArrayList<>();
+        sortSet = ReverseSetSort();
+        sortSet.forEach(i-> System.out.print(i + ", "));
+        
+    }
 
-        long startHm = System.currentTimeMillis();
-        hm.forEach((k, v) -> System.out.println("k: " + k + " v: " + v));
-        long timeHm = System.currentTimeMillis() - startHm;
+    public static void addSet(int x) {
+        integers.add(x);
+    }
 
-        TreeMap<Integer, String> tm = new TreeMap<>();
+    public static int newRandomInt () {
+        return new Random().nextInt(0, 1000);
+    }
 
-        tm.putIfAbsent(0, "красный");
-        tm.putIfAbsent(1, "синий");
-        tm.putIfAbsent(1, "зеленый");
-        tm.putIfAbsent(2, "белый");
-
-        for (var j : tm.entrySet()) {
-            tm.replace(j.getKey(), j.getValue() + "!");
-        }
-
-        while (tm.size() <1000) {
-            tm.putIfAbsent(new Random().nextInt(1000000), "золотой");
-        }
-
-        long startTm = System.currentTimeMillis();
-        tm.forEach((k, v) -> System.out.println("k: " + k + " v: " + v));
-        long timeTm = System.currentTimeMillis() - startTm;
-
-        System.out.println("HashMap: " + timeHm);
-        System.out.println("TreeMap: " + timeTm);
+    public static ArrayList<Integer> ReverseSetSort() {
+        ArrayList<Integer> arraySet = new ArrayList<>(integers);
+        Collections.sort(arraySet,Collections.reverseOrder());
+        return arraySet;
     }
 
     // public static void printStr(ArrayList str) {
